@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    padding: 0px;
     color: white;
     font-family: 'Patrick Hand', cursive;
     letter-spacing: 0.15em;
@@ -7,7 +8,30 @@
 }
 h1{
     font-size: 3rem;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Patrick Hand', cursive;
+}
+
+h2{
+    font-weight: 900;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h2.spacer{
+    padding: 0px;
+    font-size: 1.9rem;
+    font-weight: 100;
+    color: #777;
+    margin-top: 60px;
+    text-align: center;
+    letter-spacing: 1.3vw;
+}
+h2.Vspacer{
+    padding: 0px;
+    font-size: 1.9rem;
+    font-weight: 100;
+    color: #777;
+    text-align: center;
 }
 
 p{
@@ -36,6 +60,11 @@ html{
 
 body{
     background-color: #111;
+    overflow-x: hidden;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -48,7 +77,7 @@ body::-webkit-scrollbar {
   }
 
 nav{
-    border-bottom: 2px #333 dashed;
+    border-bottom: 2px #777 dashed;
     width: 100vw;
     max-width: 900px;
     justify-content: space-around;
@@ -59,7 +88,7 @@ nav{
 }
 #welcomeCC{
     margin: 0px;
-    padding-top: 60px;
+    padding-top: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -110,11 +139,17 @@ nav{
     100%{transform:rotate(360deg);}
 }
 
+@keyframes rattle{
+    0%{transform:rotate(0deg);}
+    30%{transform:rotate(-10deg);}
+    60%{transform:rotate(10deg);}
+    100%{transform:rotate(0deg);}
+}
 .navE{
     padding: 10px;
     transition: 500ms;
     font-weight: 100;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 @media (hover: hover) {
@@ -125,7 +160,8 @@ nav{
         font-weight:bolder;
         transition: 500ms;
         border-radius: 8px;
-}}
+    }
+}
 
 @media (hover: hover) {#Nabout:hover{background-color: #FF218C;}}
 @media (hover: hover) {#Ngallery:hover{background-color: #FFD800;}}
@@ -151,36 +187,17 @@ img#pfp:hover{
     img#pfp{
         display: none;
     }
-    .navE{
-        font-size: 1.2rem;
-    }
     h1{
         font-size: 2.6rem;
     }
 
 }
 
-
-.tab{
-    height:fit-content;
-    border: 2px dashed #333;
-    box-sizing: border-box;
-    margin: 20px;
-    padding: 20px;
-    margin-top: 100px;
-    text-align: center;
-}
-
-.grid{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    column-gap: 10px;
-    row-gap: 10px;
-    margin: auto;
+@media(max-device-width: 360px){
+    
+    h2.spacer{
+        display: none;
+    }
 }
 
 img.image{
@@ -213,43 +230,76 @@ a.linkT{
 
 }
 
-p.leftT{
-    text-align: left;
-    
-}
-#leftTC{
-    max-width: 800px;
-    margin: auto;
-}
 
-#socials{
-    margin-bottom: 300px;
-}
+
 
 .socialsIMG{
     width: 60px;
     margin-left: 10px;
     margin-right: 10px;
-    border-bottom: #111 2px solid;
+    /* border-bottom: #111 2px solid; */
     padding-bottom: 10px;
 }
 @media (hover: hover) {
     .socialsIMG:hover{
-    border-bottom: #FF218C 2px solid;
-    transition: 500ms;
+    /* border-bottom: #FF218C 2px solid; */
+    animation: rattle 500ms ease;
+    filter: brightness(3);
     }
 }
 
+.tab{
+    height:fit-content;
+    /* border: 2px dashed #333; */
+    box-sizing: border-box;
+    margin: auto;
+    padding: 40px;
+    margin-top: 60px;
+    text-align: center;
+}
 
 #about{
-    margin-top: 60px;
+    margin-top: 30px;
+}
+
+#leftTC{
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.grid{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: auto;
+}
+
+#socials{
+    margin-bottom: 100px;
+    width: 100%;
 }
 
 #socialsC{
-    max-width: 500px;
+    display: flex;
     margin: auto;
-    margin-top: 20px;
-    justify-content: space-between;
+    margin-top: 40px;
+    max-width: 800px;
+    /* border: 1px white solid; */
+    justify-content: space-around;
+}
+
+
+.socialsCC p{
+    padding: 0;
+    color: #999;
+    max-width: 200px;
+    /* border: 1px white solid; */
 }
 
 #pfpBIG{
@@ -257,4 +307,22 @@ p.leftT{
     border-radius: 30px;
     margin: 30px;
     -webkit-user-drag: none;
+}
+
+.nya{
+    height: 100px;
+    margin: auto;
+}
+
+#catC{
+    max-height: 100px;
+    margin-top: 1000px;
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+#catT{
+    text-align: center;
+    margin-bottom: 200px;
 }
